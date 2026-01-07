@@ -1,14 +1,14 @@
-# post-it
+# simple-research-poster
 
-`post-it` is a simple Typst template for university research posters.
+`simple-research-poster` is a simple Typst template for university research posters.
 To get started, run
 
 ```sh
-typst init @local/post-it:0.1.0
+typst init @preview/simple-research-poster:0.1.0
 ```
 
 ![Lorem Ipsum example](./thumbnail.svg)
 
 ## Example
 
-![Directed Reading Poster example](./examples/coxeter-groups/poster.svg)
+![Coxeter Groups Example](./examples/coxeter-groups/poster.svg)

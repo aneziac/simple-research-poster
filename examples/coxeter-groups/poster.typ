@@ -1,4 +1,4 @@
-#import "@local/post-it:0.1.0": *
+#import "@preview/simple-research-poster:0.1.0": *
 #import "./colors.typ": base-colors
 #import "sections.typ": *
 

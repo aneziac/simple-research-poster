@@ -1,4 +1,4 @@
-#import "@local/post-it:0.1.0": *
+#import "@preview/simple-research-poster:0.1.0": *
 #import "colors.typ": base-colors
 #import "sections.typ": *
 
@@ -10,7 +10,7 @@
   width:       43in,
   height:      32.5in,
   subtitle:    [College of New New York],
-  logo:        image("logo.png", height: 150%),
+  logo:        image("assets/logo.png", height: 150%),
   base-colors: base-colors
 )
 #let colored-poster-section = poster-section.with(base-colors: base-colors)
