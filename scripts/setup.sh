@@ -16,7 +16,7 @@ PKG_DIR="$ROOT"
 # MacOS and Linux sed behavior differ, and symlink behavior differs
 OS="$(uname -s)"
 if [[ "$OS" == "Darwin" ]]; then
-    TARGET_DIR="$HOME/Library/Application Support/typst/packages/local/post-it"
+    TARGET_DIR="$HOME/Library/Application Support/typst/packages/local/simple-research-poster"
     VERSION=$(grep '^version = ' "$PKG_DIR/typst.toml" | sed -E 's/^version = "([^"]+)"/\1/')
 
     mkdir -p "$TARGET_DIR"
@@ -25,7 +25,7 @@ if [[ "$OS" == "Darwin" ]]; then
     exit 0
 
 elif [[ "$OS" == "Linux" ]]; then
-    TARGET_DIR="$HOME/.local/share/typst/packages/local/post-it"
+    TARGET_DIR="$HOME/.local/share/typst/packages/local/simple-research-poster"
     VERSION=$(grep -oP '(?<=^version = ").*?(?=")' "$PKG_DIR/typst.toml")
 
     mkdir -p $TARGET_DIR
