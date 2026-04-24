@@ -7,34 +7,26 @@
   textcolor2: z.color(),
 ))
 
-#let default-base-colors = (
-  bgcolor1:   white,
-  bgcolor2:   white,
-  textcolor1: blue,
-  textcolor2: blue,
-)
-
 #let poster-section(
   title,
   body,
-  base-colors: default-base-colors,
+  base-colors: none,
+  title-style: none,
   fill: false,
 ) = {
+  assert(base-colors != none, message: "Must provide base-colors to poster-section")
+  assert(title-style != none, message: "Must provide title-style to poster-section")
+  base-colors = z.parse(base-colors, base-colors-schema)
+
   let fill_color = if fill {base-colors.bgcolor1} else {none}
   block(
-    width: 100%,
-    fill: fill_color,
-    inset: 20pt,
+    width:  100%,
+    fill:   fill_color,
+    inset:  20pt,
     radius: 10pt,
     stack(
       align(center)[
-        #text(
-          40pt,
-          weight: "extrabold",
-          fill: base-colors.bgcolor2
-        )[
-          #title
-        ]
+        #(title-style)[#title]
         #v(0.4em)
       ],
       v(0.15em),
@@ -56,7 +48,6 @@
 #let poster-header(
   title,
   author,
-  mentor,
   subtitle,
   logo,
   base-colors,
@@ -66,13 +57,6 @@
       align(center + horizon)[#logo]
     } else {
       []
-    }
-  }
-  let authors-content = {
-    if mentor != none {
-      [#author --- #mentor]
-    } else {
-      [#author]
     }
   }
 
@@ -85,15 +69,14 @@
       fill: base-colors.bgcolor2,
       width: 100%,
       height: 100%,
-      inset: 0.5in,
       grid(
         columns: (1fr, 4fr, 1fr),
         [],
         align(center + horizon)[#stack(
-          spacing: 0.5in,
-          text(size: 72pt, weight: "extrabold")[#title],
-          text(size: 48pt)[#authors-content],
-          text(size: 36pt)[#subtitle]
+          spacing: 30pt,
+          title,
+          author,
+          subtitle,
         )],
         logo-content
       )
@@ -106,9 +89,9 @@
   stack(
     dir: ttb,
     block(
-      fill: base-colors.bgcolor2,
-      width: 100%,
-      height: 100%
+      fill:   base-colors.bgcolor2,
+      width:  100%,
+      height: 100%,
     )
   )
 }
@@ -117,10 +100,7 @@
 #let poster(
   title:        "",
   author:       "",
-  width:        43in,
-  height:       32.5in,
   base-colors:  none,
-  mentor:       none,
   subtitle:     none,
   logo:         none,
   doc,
@@ -129,19 +109,12 @@
   assert(base-colors != none, message: "Must provide base-colors to simple-research-poster")
   base-colors = z.parse(base-colors, base-colors-schema)
 
-  set par(justify: true)
-
-  set text(
-    size: 24pt,
-  )
-
   grid(
     columns: 1,
     rows: (13%, 83%, 4%),
     poster-header(
       title,
       author,
-      mentor,
       subtitle,
       logo,
       base-colors,
