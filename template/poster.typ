@@ -1,24 +1,31 @@
 #import "@preview/simple-research-poster:0.1.0": *
-#import "colors.typ": base-colors
+#import "colors.typ": (
+  base-colors,
+  bold-color,
+)
 #import "sections.typ": *
 
+#set page(
+  paper: "a1",
+  margin: 0%,
+)
 
 #show: poster.with(
   title:       [Applied Cryonics: How I Slept Through the 21st Century],
   author:      [Philip J. Fry and Turanga Leela],
   mentor:      [Mentor: Bender B. Rodriguez],
-  width:       43in,
-  height:      32.5in,
   subtitle:    [College of New New York],
   logo:        image("assets/logo.png", height: 150%),
   base-colors: base-colors
 )
 #let colored-poster-section = poster-section.with(base-colors: base-colors)
 
+#show strong: set text(fill: bold-color)
+
 #pad(
   grid(
     columns: 3,
-    inset: 0.5in,
+    inset: 35pt,
     gutter: 30pt,
     [
       #colored-poster-section[Section 1][#section1]
@@ -36,6 +43,6 @@
       #colored-poster-section[References][#references]
     ]
   ),
-  top: 0.5in,
-  x: 1in,
+  top: 20pt,
+  x: 70pt,
 )

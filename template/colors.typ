@@ -4,3 +4,4 @@
   textcolor1:  rgb("#1f1804"),
   textcolor2:  rgb("#fdfbf5"),
 )
+#let bold-color = rgb("cb4b16")

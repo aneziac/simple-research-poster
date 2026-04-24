@@ -129,12 +129,6 @@
   assert(base-colors != none, message: "Must provide base-colors to simple-research-poster")
   base-colors = z.parse(base-colors, base-colors-schema)
 
-  set page(
-    height: height,
-    width:  width,
-    margin: 0in,
-  )
-
   set par(justify: true)
 
   set text(
