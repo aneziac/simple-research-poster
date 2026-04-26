@@ -17,6 +17,7 @@
   assert(base-colors != none, message: "Must provide base-colors to poster-section")
   assert(title-style != none, message: "Must provide title-style to poster-section")
   base-colors = z.parse(base-colors, base-colors-schema)
+  assert(type(title-style) == function, message: "title-style must be a partial application of text()")
 
   let fill_color = if fill {base-colors.bgcolor1} else {none}
   block(
@@ -52,17 +53,9 @@
   logo,
   base-colors,
 ) = {
-  let logo-content = {
-    if logo != none {
-      align(center + horizon)[#logo]
-    } else {
-      []
-    }
-  }
+  set text(fill: base-colors.textcolor2)
+  set align(center + horizon)
 
-  set text(
-    fill: base-colors.textcolor2
-  )
   stack(
     dir: ttb,
     block(
@@ -78,7 +71,7 @@
           author,
           subtitle,
         )],
-        logo-content
+        if logo != none {logo} else []
       )
     ),
   )

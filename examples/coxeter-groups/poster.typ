@@ -1,17 +1,32 @@
-#import "@preview/simple-research-poster:0.1.0": *
+#import "@local/simple-research-poster:0.1.0": *
 #import "./colors.typ": base-colors
 #import "sections.typ": *
 
+#set page(
+  width:   43in,
+  height:  32.5in,
+  margin:  0%,
+)
+
 #show: poster.with(
-  title:       [Geometric Realization of Coxeter Groups],
-  author:      [Nate Annau and Jesse Cobb],
-  mentor:      [Mentor: Benedict Lee],
-  subtitle:    [University of California, Santa Barbara],
-  logo:        image("assets/whitelogo.png", height: 100%),
+  title:       text(size: 72pt, weight: "extrabold")[Geometric Realization of Coxeter Groups],
+  author:      text(size: 48pt)[Nate Annau and Jesse Cobb --- Mentor: Benedict Lee],
+  subtitle:    text(size: 36pt)[University of California, Santa Barbara],
+  logo:        align(horizon)[#image("assets/whitelogo.png", height: 90%)],
   base-colors: base-colors,
 )
-#let colored-poster-section = poster-section.with(base-colors: base-colors)
-
+#let colored-poster-section = poster-section.with(
+  base-colors: base-colors,
+  title-style: text.with(
+    size:   30pt,
+    weight: "extrabold",
+    fill:   base-colors.bgcolor2
+  ),
+)
+#set text(
+  size: 24pt,
+)
+#set par(justify: true)
 
 #let rgutter = 0.5cm
 #pad(

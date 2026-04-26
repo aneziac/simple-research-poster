@@ -13,7 +13,7 @@
 
 #show: poster.with(
   title:       text(size: 58pt, weight: "extrabold")[Applied Cryonics: How I Slept Through the 21st Century],
-  author:      text(size: 40pt)[Philip J. Fry and Turanga Leela --- Mentor: Bender B. Rodriguez],
+  author:      text(size: 40pt)[Philip J. Fry and Turanga Leela --- Advisor: Bender B. Rodriguez],
   subtitle:    text(size: 28pt)[College of New New York],
   logo:        image("assets/logo.png", height: 120%),
   base-colors: base-colors,
