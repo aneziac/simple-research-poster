@@ -4,7 +4,7 @@
 To get started, run
 
 ```sh
-typst init @preview/simple-research-poster:0.1.0
+typst init @preview/simple-research-poster:0.2.0
 ```
 
 and you should see this:
