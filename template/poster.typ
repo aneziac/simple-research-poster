@@ -12,19 +12,23 @@
 )
 
 #show: poster.with(
-  title:       text(size: 72pt, weight: "extrabold")[Applied Cryonics: How I Slept Through the 21st Century],
-  author:      text(size: 48pt)[Philip J. Fry and Turanga Leela --- Mentor: Bender B. Rodriguez],
-  subtitle:    text(size: 36pt)[College of New New York],
-  logo:        image("assets/logo.png", height: 150%),
+  title:       text(size: 58pt, weight: "extrabold")[Applied Cryonics: How I Slept Through the 21st Century],
+  author:      text(size: 40pt)[Philip J. Fry and Turanga Leela --- Mentor: Bender B. Rodriguez],
+  subtitle:    text(size: 28pt)[College of New New York],
+  logo:        image("assets/logo.png", height: 120%),
   base-colors: base-colors,
 )
 #let colored-poster-section = poster-section.with(
   base-colors: base-colors,
-  title-style: text.with(size: 40pt, weight: "extrabold", fill: base-colors.bgcolor2),
+  title-style: text.with(
+    size:   30pt,
+    weight: "extrabold",
+    fill:   base-colors.bgcolor2
+  ),
 )
 
 #set text(
-  size: 24pt,
+  size: 17pt,
 )
 #set par(justify: true)
 #show strong: set text(fill: bold-color)
