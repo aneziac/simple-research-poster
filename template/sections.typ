@@ -1,7 +1,7 @@
 #let section1 = [
   This is an *example section*, and here is an example equation:
   $
-    sum_(i = 1)^oo 1 / n^2 = pi^2 / 6.
+    sum_(n = 1)^oo 1 / n^2 = pi^2 / 6.
   $
 
   #lorem(270)
