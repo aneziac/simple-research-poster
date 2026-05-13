@@ -4,7 +4,7 @@
 To get started, run
 
 ```sh
-typst init @preview/simple-research-poster:0.2.0
+typst init @preview/simple-research-poster:0.2.1
 ```
 
 and you should see this:
@@ -13,16 +13,23 @@ and you should see this:
     <img src="./thumbnail.svg" width="100%">
 </a>
 
-The default file tree is simple: `poster.typ` handles the layout, `sections.typ` handles the actual poster content, and `colors.typ` handles the color styling.
+The default file tree is simple:
+
+- `main.typ` handles the relevant show and set rules, and how the sections are laid out in the grid
+- `sections.typ` handles the actual poster content. This is where you place your exposition, results, diagrams, etc.
+- `simple-research-poster.typ` is the template file, specifying how sections and the header and footer are constructed
+  - For example, here you can add trim, add additional space for the title text, or switch the logo to the left side
+- `colors.typ` handles the colors
+
 The template is designed to be as generic as possible, so that it supports arbitrary paper size, arbitrary columns, landscape/portrait orientations, etc.
-[Open an issue on Github](https://github.com/aneziac/simple-research-poster) if you have any feature requests.
+[Open an issue on Github](https://github.com/aneziac/simple-research-poster) if you have any feature requests or questions.
 
 ## Example
 
 This template is a generalization of our code for the poster below:
 
 <a href="https://github.com/aneziac/simple-research-poster/blob/main/examples/coxeter-groups">
-    <img src="./examples/coxeter-groups/poster.svg" width="100%">
+    <img src="./examples/coxeter-groups/main.svg" width="100%">
 </a>
 
 Click the image above to see the code.

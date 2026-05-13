@@ -1,4 +1,7 @@
-#import "@preview/simple-research-poster:0.2.0": *
+#import "simple-research-poster.typ": (
+  poster-section,
+  poster,
+)
 #import "colors.typ": (
   base-colors,
   bold-color,
